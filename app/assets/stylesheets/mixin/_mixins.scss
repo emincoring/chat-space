@@ -1,0 +1,28 @@
+@mixin group {
+  margin-block-end: 40px;
+    .group__group-name {
+      font-size: 15px;
+      margin-block-end: 5px;
+    }
+    .group__latest-message {
+      font-size:11px;
+    }
+}
+
+@mixin message {
+  padding-bottom: 40px;
+    .message__info {
+      display: flex;
+      margin-bottom: 10px;
+      .message__info__user {
+        font-size: 16px;
+        font-weight: bold;
+        color: $main-font;
+      }
+      .message__info__date {
+        margin-left: 10px;
+        font-size: 12px;
+        color: $sub-font;
+      }
+    }
+}

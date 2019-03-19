@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  &:-webkit-any-link {
+    cursor: pointer;
+  }
+}
+
+.fa {
+display: inline-block;
+font-size: inherit;
+-webkit-font-smoothing: antialiased;
+}
+
