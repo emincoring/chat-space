@@ -59,3 +59,5 @@ gem 'font-awesome-rails'
 
 # Use devise
 gem 'devise'
+
+gem 'rails-i18n', '~> 5.1'
