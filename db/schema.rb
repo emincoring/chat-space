@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20190323110640) do
     t.datetime "updated_at", null: false
   end
 
+ActiveRecord::Schema.define(version: 20190321190723) do
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -43,4 +45,4 @@ ActiveRecord::Schema.define(version: 20190323110640) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
-end
+  end
