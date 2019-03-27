@@ -1,23 +1,5 @@
 .wrapper
-  .side
-    .side__header
-      .side__header__box
-        %p.side__header__box__user-name
-          = current_user.name
-        %ul.side__header__box__menu
-          %li.side__header__box__menu__edit-user
-            %a{ href: "#"}
-              %i.fa.fa-edit
-          %li.side__header__box__menu__new-group
-            = link_to edit_user_path(current_user) do
-              %i.fa.fa-cog
-    .groups
-      %a
-        .group
-          %p.group__group-name
-            test-name
-          %p.group__latest-message
-            test-message
+  = render 'devise/shared/side_bar'
   .main
     .main-header
       .main-header__group-box
@@ -27,7 +9,7 @@
           Member :
           %li.main-header__group-box__member-list__member
             nyanco
-      %a{ href: "#"}
+      %a{ href: "/groups/1/edit"}
         .main-header__edit-btn
           Edit
     .messages
