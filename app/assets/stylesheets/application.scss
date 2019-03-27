@@ -1,9 +1,11 @@
-@import "./reset";
+@import "./config/reset";
 @import "font-awesome";
 @import "./config/variable";
 @import "./mixin/mixins";
 @import "./modules/common";
-@import "./side-bar";
 @import "./modules/flashbox";
+@import "./modules/user";
+@import "./modules/group";
+@import "./side-bar";
 @import "./main-header";
 @import "./_main-messages";
