@@ -4,29 +4,22 @@
     .main-header
       .main-header__group-box
         %h2.main-header__group-box__group-name
-          group-name
+          = @group.name
         %ul.main-header__group-box__member-list
           Member :
-          %li.main-header__group-box__member-list__member
-            nyanco
+          - @group.users.each do |user|
+            %li.main-header__group-box__member-list__member
+              = user.name
       %a{ href: "/groups/1/edit"}
         .main-header__edit-btn
           Edit
     .messages
-      .message
-        .message__info
-          %p.message__info__user
-            nyanco
-          %p.message__info__date
-            2019/03/18(Mon) 15:39:49
-        %p.message__text
-          こんばんは！
+      = render partial: 'message', collection: @messages
     .form
-      %form{action: "/", method: "post"}
-        .input-box
-          %input.input-box__text{placeholder: "type a message", name: "message", size: "40"}
-          %label.input-box__image
-            %i.fa.fa-image
-            %input.input-box__image__file{type: "file", name: "message[image]"}
-        %input.submit-btn{type: "submit", value: "send"}
-
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit-btn'
