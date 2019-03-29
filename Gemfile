@@ -63,3 +63,7 @@ gem 'devise'
 gem 'rails-i18n', '~> 5.1'
 
 gem 'pry-rails'
+
+# Use imagefile uproader
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
