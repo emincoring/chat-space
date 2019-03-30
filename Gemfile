@@ -38,6 +38,10 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.8'
+  gem 'spring-commands-rspec'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -67,3 +71,7 @@ gem 'pry-rails'
 # Use imagefile uproader
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+group :test do
+  gem 'faker'
+end
