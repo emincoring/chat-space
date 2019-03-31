@@ -42,6 +42,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -72,6 +73,4 @@ gem 'pry-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
-group :test do
-  gem 'faker'
-end
+
