@@ -35,9 +35,9 @@ $(function(){
       console.log('sucsess!!')
       var html = buildHTML(message);
       $('.messages').append(html);
-      // $('img').error(function(){
-      //   $(this).remove();
-      // });
+      $('img').error(function(){
+        $(this).remove();
+      });
       $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
