@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    var imageHTML = (message.image) ? `<img class="message__image" src=${message.image.url}>` : ""
     var html = `<div class="message">
                   <div class="message__info">
                     <p class="message__info__user">
@@ -10,12 +9,12 @@ $(function(){
                       ${message.time}
                     </p>
                   </div>
-                  <p class="message__text">
+                  <div class="message__text">
                     <p class="message__text__content">
                       ${message.content}
                     </p>
-                    ${imageHTML}
-                  </p>
+                    <img class="message__image" src=${message.image.url}>
+                  </div>
                 </div>`;
     return html;
   }
@@ -31,9 +30,14 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(message){
+      var html = buildHTML(message);
       $('.messages').append(html);
+      $(html).ready(function(){
+        $('img').error(function(){
+          $(this).remove();
+        });
+      })
       $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
