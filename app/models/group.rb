@@ -3,6 +3,7 @@ class Group < ApplicationRecord
   has_many :users, through: :group_users
   validates :name, presence: true
   has_many :messages
+  accepts_nested_attributes_for :users
 
   def show_last_message
     if (last_message = messages.last).present?
