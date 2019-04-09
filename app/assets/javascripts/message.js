@@ -32,7 +32,6 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log('sucsess!!')
       var html = buildHTML(message);
       $('.messages').append(html);
       $('img').error(function(){
