@@ -25,16 +25,15 @@
       }
     }
   }
-    a {
-      color: $blue;
-      .main-header__edit-btn {
-        height: 40px;
-        line-height: 40px;
-        margin-top: 28px;
-        padding: 0 20px;
-        border: solid 1px $blue;
-        position: absolute;
-        right: 40px;
-      }
+    .main-header__edit-btn {
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      border: solid 1px $blue;
+      position: absolute;
+      right: 40px;
+      background-color: $blue;
+      color: $white;
     }
 }
