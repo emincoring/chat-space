@@ -25,6 +25,9 @@
       .chat-group-form__field--right
         #chat-group-users
           =f.hidden_field :member, name:'group[user_ids][]', value: current_user.id
+          .chat-group-user.clearfix
+            %p.chat-group-user__name
+              = current_user.name
           - group.users.each do |member|
             .chat-group-user.clearfix
               %p.chat-group-user__name
