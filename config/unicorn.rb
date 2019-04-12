@@ -1,6 +1,6 @@
 app_path = File.expand_path('../../', __FILE__)
 
-worker_process 1
+worker_processes 1
 
 working_directory app_path
 pid "#{app_path}/tmp/pids/unicorn.pid"
@@ -30,7 +30,7 @@ before_fork do |server, worker|
   if File.exist?(old_pid) && server.pid != old_pid
     begin
       sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
-      process.kill(sig, File.read(old_pid).to_i)
+      Process.kill(sig, File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH => e
       logger.error e
     end
@@ -39,4 +39,3 @@ end
 
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
-end
